@@ -1,0 +1,5 @@
+<div class="input">
+    <!-- <div *ngIf="[(ngModel)] == ''"></div> -->
+    <input type="text" [(ngModel)]="yourTodo">
+    <button class="add" (click)="onAddTodo()" [disabled]="yourTodo == '' ">Add</button>
+</div>

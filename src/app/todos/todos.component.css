@@ -1,0 +1,7 @@
+.heart {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    font-family: sans-serif;
+}

@@ -1,0 +1,58 @@
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0 30px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    gap: 5px;
+    padding: 0 15px;
+    border-radius: 8px;
+
+}
+
+.todo {
+    font-size: 15px;
+    background-color: #ededed;
+    flex: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+}
+
+.btns .del,
+.btns .edit {
+    padding: 9px 15px;
+    margin: 5px;
+}
+
+.del {
+    background-color: rgb(190, 40, 40);
+    border: 1px solid grey;
+}
+
+.edit {
+    background-color: rgb(17, 117, 17);
+    border: 1px solid grey;
+}
+
+button {
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}

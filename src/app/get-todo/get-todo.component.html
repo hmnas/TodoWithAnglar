@@ -1,0 +1,15 @@
+<div class="row">
+
+    <div class="todo">
+        <input type="checkbox" (click)="onCheckbox(element)">
+        <ul>
+            <li [class]="{'strike': !element.active}">{{element.desc}}</li>
+        </ul>
+    </div>
+
+    <div class="btns">
+        <button class="del" (click)="deletion(element)">Delete</button>
+        <button class="edit" (click)="onChangeTodo(element)">Edit</button>
+
+    </div>
+</div>
