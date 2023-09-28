@@ -8,22 +8,25 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class GetTodoComponent {
   checked = true;
 
-  @Input() element: { desc: string, active: boolean } = {
-    desc: '',
-    active: true
-  }
-  @Output() delTodo = new EventEmitter<{ desc: string, active: boolean }>()
-  @Output() checkTodo = new EventEmitter<{ desc: string, active: boolean }>()
-  @Output() changeTodo = new EventEmitter<{ desc: string, active: boolean }>()
 
-  deletion(todo: { desc: string, active: boolean }) {
+  @Input() element: { desc: string, active: boolean, edited: boolean } = {
+    desc: '',
+    active: true,
+    edited: false
+  }
+  @Output() delTodo = new EventEmitter<{ desc: string, active: boolean, edited: boolean }>()
+  @Output() checkTodo = new EventEmitter<{ desc: string, active: boolean, edited: boolean }>()
+  @Output() changeTodo = new EventEmitter<{ desc: string, active: boolean, edited: boolean }>()
+
+  deletion(todo: { desc: string, active: boolean, edited: boolean }) {
     this.delTodo.emit(todo)
   }
-  onCheckbox(todo: { desc: string, active: boolean }) {
+  onCheckbox(todo: { desc: string, active: boolean, edited: boolean }) {
     this.checkTodo.emit(todo)
   }
 
-  onChangeTodo(todo: { desc: string, active: boolean }) {
+  onChangeTodo(todo: { desc: string, active: boolean, edited: boolean }) {
     this.changeTodo.emit(todo)
+
   }
 }

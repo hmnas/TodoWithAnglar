@@ -19,6 +19,12 @@
 }
 
 .input-field {
-    width: 80%;
+    width: 85%;
     margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .input-field {
+        width: 100%;
+    }
 }

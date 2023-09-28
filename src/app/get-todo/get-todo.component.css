@@ -3,7 +3,7 @@ li {
 }
 
 ul {
-    padding: 0 30px;
+    padding: 0 10px;
 }
 
 .row {
@@ -14,13 +14,12 @@ ul {
     gap: 5px;
     padding: 0 15px;
     border-radius: 8px;
-
+    background-color: #ededed;
 }
 
 .todo {
     font-size: 15px;
-    background-color: #ededed;
-    flex: 60%;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -29,18 +28,31 @@ ul {
 
 .btns .del,
 .btns .edit {
-    padding: 9px 15px;
+    padding: 7px 10px;
     margin: 5px;
 }
 
 .del {
     background-color: rgb(190, 40, 40);
     border: 1px solid grey;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .edit {
     background-color: rgb(17, 117, 17);
     border: 1px solid grey;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.del:hover,
+.edit:hover {
+    box-shadow: 0 0 4px rgb(10, 10, 10);
 }
 
 button {
@@ -53,6 +65,48 @@ button {
     text-decoration: line-through;
 }
 
+ul li span {
+    color: rgb(158, 158, 158);
+    font-size: 14px;
+}
+
 input[type="checkbox"] {
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .btns .del,
+    .btns .edit {
+        padding: 7px 5px;
+        margin: 5px;
+    }
+
+    .todo {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .row {
+        flex-direction: column;
+        background-color: transparent;
+    }
+
+    .todo {
+        width: 100%;
+        background-color: #ededed;
+    }
+
+    .btns {
+        width: 100%;
+    }
+
+    .del,
+    .edit {
+        width: 100%;
+    }
+
+
 }

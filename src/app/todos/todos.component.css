@@ -5,3 +5,57 @@
     justify-content: center;
     font-family: sans-serif;
 }
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input input {
+    width: 93%;
+    padding: 10px;
+}
+
+.add {
+    padding: 10px 15px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    background-color: rgb(221, 181, 0);
+    color: rgb(17, 16, 16);
+    cursor: pointer;
+}
+
+.add:disabled {
+    background-color: rgb(175, 153, 79);
+}
+
+.clear {
+
+    background-color: rgb(221, 181, 0);
+    color: white;
+    text-align: center;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.score {
+    text-align: right;
+    font-size: 15px;
+    margin: 0px 0 -35px 0;
+}
+
+@media (max-width: 520px) {
+    .input {
+        flex-direction: column;
+    }
+
+    .input .add {
+        width: 100%;
+    }
+
+    .score {
+        text-align: left;
+    }
+}

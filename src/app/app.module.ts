@@ -3,22 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
-import { AddTodoComponent } from './add-todo/add-todo.component';
 import { GetTodoComponent } from './get-todo/get-todo.component';
 import { FormsModule } from '@angular/forms';
+import { TodoService } from './todos/todo.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
-    AddTodoComponent,
     GetTodoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

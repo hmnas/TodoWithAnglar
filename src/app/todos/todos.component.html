@@ -1,16 +1,21 @@
 <div class="heart">
     <div class="one">
-        <app-add-todo (todoCreated)="addTodo($event)"></app-add-todo>
+        <div class="input">
+            <input type="text" [(ngModel)]="yourTodo">
+            <button class="add" (click)="addTodo()" [disabled]="yourTodo == '' ">Add</button>
+        </div>
     </div>
     <div class="two">
         <div *ngIf="this.todos.length === 0 ; else down">No Todos Available</div>
         <ng-template #down>
-            <div *ngFor=" let todo of todos">
-                <app-get-todo [element]="todo" (delTodo)="deleteTodo($event)"
-                    (checkTodo)="checkToggle($event)" (changeTodo)="editTodo($event)"></app-get-todo>
+            <div *ngFor="let todo of todos; let i = index">
+                <app-get-todo [element]="todo" (delTodo)="deleteTodo($event)" (checkTodo)="checkToggle($event)"
+                    (changeTodo)="editTodo(i)"></app-get-todo>
             </div>
 
         </ng-template>
     </div>
-
+    <div class="score">Underdone : {{count}}</div>
+    <div class="btn btn-defualt clear" style="    border: 2px solid white;
+border-radius: 5px;" (click)="onClear()">Clear Completed</div>
 </div>
